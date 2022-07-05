@@ -1,0 +1,25 @@
+Day7 - 7/5/22
+
+runnable - interface
+if there is only one method in the interface it can be converted into a lamda expression
+
+
+lamda expression 
+()->method()
+if the code is only few code use lamda expression
+only works when interface has only one method. 
+fuctional interface - interface with only one method.
+to denote it we use @FunctionalInterface
+unadviced for methods with more than line of code. 
+- if more than one method you cannot use lamda
+
+note: if put only 2, java undrstands it as int.
+            2.0 as double(you can write 2d instead)
+            for float, you have to write 2f
+
+
+toString() = a method that gives the name of the object 
+- is in 'Object' class.
+- even when not written, any class automatically extends 'Object' class.
+
+when running a program in cmd promt, when we do ".\", it searches the current directory for the program or script. 
