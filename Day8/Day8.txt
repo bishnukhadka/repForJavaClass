@@ -1,0 +1,26 @@
+syncronized types
+    -block level 
+    -method syncronized
+    -while using syncronized it locks the resource it is operating on. but for better performance thread,
+    creates a copy of the resource on its personal cache, so the resource on the main memory and the one on the 
+    cache may not be in sync.
+
+
+volatile type
+    -keyword
+    -primitive type 
+    -"being stored in main memory"
+    -tells to java to use the value from the main memory.
+
+follow Jacob Jenkov's Java article.
+
+atomic 
+    -wrapper 
+    -read/write vako bela arko read/write huna milena 
+    - to do number++ in atomic we use a method incrementAndGet()
+    - if we need functionality of sync and volatile
+    - it couldn't make it thread safe while using number++ so it exposed us to safe methods. 
+
+
+t1.join()
+-main thread waits for t1 thread to finish its task . 

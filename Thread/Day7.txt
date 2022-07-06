@@ -23,3 +23,9 @@ toString() = a method that gives the name of the object
 - even when not written, any class automatically extends 'Object' class.
 
 when running a program in cmd promt, when we do ".\", it searches the current directory for the program or script. 
+
+
+IntStram - 
+An IntStream interface extends the BaseStream interface in Java 8. 
+It is a sequence of primitive int-value elements and a specialized stream for manipulating int values. 
+We can also use the IntStream interface to iterate the elements of a collection in lambda expressions and method references.
