@@ -4,6 +4,8 @@ public class Main {
     
     public static void main(String[] args) {
         
+        System.out.println("Main thread started \n");
+
         Player player1 = new Player();
         Player player2 = new Player();
 
@@ -15,5 +17,7 @@ public class Main {
 
         player1.start();
         player2.start();
+
+        System.out.println("Main thread ended \n ");
     }
 }
