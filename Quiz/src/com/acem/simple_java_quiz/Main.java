@@ -53,3 +53,10 @@ public class Main {
     }
 
 }
+
+/*problem
+ * 
+ * while starting the game for 2nd time, scanner does not input 
+ * the player name, instead takes "return key" or "null" as 
+ * its input.
+ */
