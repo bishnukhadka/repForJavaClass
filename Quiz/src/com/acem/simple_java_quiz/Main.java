@@ -50,6 +50,7 @@ public class Main {
             System.out.println("invalid choice. press again.");
         }
 
+        scanner.close();
     }
 
 }
