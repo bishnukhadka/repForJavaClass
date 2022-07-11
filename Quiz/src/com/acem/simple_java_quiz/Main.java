@@ -1,4 +1,5 @@
 package com.acem.simple_java_quiz;
+
 import java.util.Scanner;
 
 import com.acem.simple_java_quiz.resource.Mainmenu;
@@ -11,7 +12,6 @@ public class Main {
         Mainmenu mainmenu = new Mainmenu();
         HighScore highscore = new HighScore();
         Questions questions = new Questions();
-        Play play = new Play();
         String player_name;
         Integer score;
         mainmenu.show_main_menu();
@@ -20,24 +20,24 @@ public class Main {
         char choice = scanner.next().charAt(0);
 
         if (choice == 'a' || choice == 'A') {
-            while(true){
-                //debug
-            System.out.println("/////////start of while loop////////");
-            
-            player_name = play.ask_for_player_name();
-            score = play.start_game(player_name);
-            highscore.add_score(player_name, score);
-            highscore.show_highscore();
-            
+            Play play = new Play();
 
-            System.out.println("\nPress p to play again and other to exit.");
-            char a=scanner.next().charAt(0);
-            
-            if(a != 'p')
-            {
-                System.out.println("insde while if clause");
-                break;
-            }
+            while (true) {
+                // debug
+                System.out.println("/////////start of while loop////////");
+
+                player_name = play.ask_for_player_name();
+                score = play.start_game(player_name);
+                highscore.add_score(player_name, score);
+                highscore.show_highscore();
+
+                System.out.println("\nPress p to play again and other to exit.");
+                char a = scanner.next().charAt(0);
+
+                if (a != 'p') {
+                    System.out.println("ending game.");
+                    break;
+                }
 
             }
             if (score == questions.get_no_of_questions())
@@ -55,9 +55,10 @@ public class Main {
 
 }
 
-/*problem
+/*
+ * problem
  * 
- * while starting the game for 2nd time, scanner does not input 
- * the player name, instead takes "return key" or "null" as 
+ * while starting the game for 2nd time, scanner does not input
+ * the player name, instead takes "return key" or "null" as
  * its input.
  */
