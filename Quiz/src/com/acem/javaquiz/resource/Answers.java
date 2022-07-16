@@ -1,4 +1,4 @@
-package com.acem.simple_java_quiz.resource;
+package com.acem.javaquiz.resource;
 
 public class Answers{
     char[] answers = {

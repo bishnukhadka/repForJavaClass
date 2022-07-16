@@ -1,0 +1,18 @@
+
+
+Interface Agregation
+
+
+Adapter Pattern 
+    is a structural design pattern that allows objects with incompatible interfaces to collaborate.
+
+Competative Programming
+    -hakerrank
+    -leetcode
+
+Array
+list->collection->expands dynamically
+to make original list, implement List to your list
+
+ararylist best for stuf with no manipulation and retrival of specific index
+linkedlist best for stuff needing manipulation
