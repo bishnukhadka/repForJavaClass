@@ -5,8 +5,8 @@ public class Answers{
         'a', 'a' , 'c' ,'d' , 'b'
     };
 
-    public char getAnswer(int i)
-    {   
-        return answers[i];
-    }
+    // public char getAnswer(int i)
+    // {   
+    //     return answers[i];
+    // }
 }

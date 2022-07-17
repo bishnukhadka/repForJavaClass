@@ -3,6 +3,7 @@ package com.acem.javaquiz.resources;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Questions {
@@ -19,39 +20,38 @@ public class Questions {
     // width of the tree \tb. To count the rings on the trunk\tc. To count the
     // number of leaves\td. To measure the height of the tree",
     // };
-    List<String> questions = new ArrayList<String>();
-    List<String> answers = new ArrayList<String>();
-
+    static List<String> questions = new ArrayList<String>();
+    static List<String> answers = new ArrayList<String>();
+    static int list_size;
     // public Questions() {
-    //     String file = "src/com/acem/javaquiz/resources/Questions.txt";
-    //     String temp = " ";
-    //     try {
-    //         Scanner scanner = new Scanner(new File(file));
-    //         scanner.useDelimiter("::");
-    //         int j = 1;
-    //         while (scanner.hasNext()) {
+    // String file = "src/com/acem/javaquiz/resources/Questions.txt";
+    // String temp = " ";
+    // try {
+    // Scanner scanner = new Scanner(new File(file));
+    // scanner.useDelimiter("::");
+    // int j = 1;
+    // while (scanner.hasNext()) {
 
-    //             String next = scanner.next();
-    //             temp += next;
-    //             System.out.println("\nnow temp is: " + temp);
-    //             // System.out.println(j+ " = " + next);
-    //             if (j % 6 == 0) {
-    //                 // System.out.println(j + "divisible by 6\n");
-    //                 questions.add(temp);
-    //                 answers.add(next);
-    //                 System.out.println(next + " added in answers\n");
-    //                 temp = " ";
-    //             }
-    //             j++;
-    //         }
-
-    //     } catch (Exception ex) {
-    //         System.out.println(ex.toString());
-    //     }
+    // String next = scanner.next();
+    // temp += next;
+    // System.out.println("\nnow temp is: " + temp);
+    // // System.out.println(j+ " = " + next);
+    // if (j % 6 == 0) {
+    // // System.out.println(j + "divisible by 6\n");
+    // questions.add(temp);
+    // answers.add(next);
+    // System.out.println(next + " added in answers\n");
+    // temp = " ";
+    // }
+    // j++;
     // }
 
-    public static void loadQuestions()
-    {
+    // } catch (Exception ex) {
+    // System.out.println(ex.toString());
+    // }
+    // }
+        
+    public static void loadQuestions() {
         String file = "src/com/acem/javaquiz/resources/Questions.txt";
         String temp = " ";
         try {
@@ -61,14 +61,16 @@ public class Questions {
             while (scanner.hasNext()) {
 
                 String next = scanner.next();
-                temp += next;
-                System.out.println("\nnow temp is: " + temp);
-                // System.out.println(j+ " = " + next);
-                if (j % 6 == 0) {
+                if (j % 6 != 0) {
+                    temp += "\n";
+                    temp += next;
+                    // System.out.println("\nnow temp is: " + temp);
+                    // System.out.println(j+ " = " + next);
+                } else {
                     // System.out.println(j + "divisible by 6\n");
                     questions.add(temp);
                     answers.add(next);
-                    System.out.println(next + " added in answers\n");
+                    // System.out.println(next + " added in answers\n");
                     temp = " ";
                 }
                 j++;
@@ -77,15 +79,26 @@ public class Questions {
 
         } catch (Exception ex) {
             System.out.println(ex.toString());
-        }       
+        }
+
+        list_size= questions.size();
     }
 
-    public int getNoOfQuestions() {
-        return questions.size();
+    public static int getNoOfQuestions() {
+        return list_size;
     }
 
-    public String getQuestion(int i) {
-        return questions.get(i);
+    public static int getQuestion() {
+        Random rand = new Random();
+        int i = rand.nextInt(questions.size());
+        System.out.println(questions.get(i));
+        return i;
+    }
+
+    public static String getAnswer(int i)
+    {   
+        System.out.println("returned answer is: " + answers.get(i));
+        return answers.get(i);
     }
 
 }
