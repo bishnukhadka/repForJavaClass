@@ -10,14 +10,14 @@ import com.acem.javaquiz.resources.Questions;
 public class Main {
     public static void main(String[] args) {
         HighScore highscore = new HighScore();
-
+        Questions questions = new Questions();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
             Mainmenu.showMainMenu();
             char choice = scanner.next().charAt(0);
             if (choice == 'a' || choice == 'A') {
-            playGame();
+            playGame(questions);
                 
 
             } else if (choice == 'b' || choice == 'B') {
@@ -34,6 +34,7 @@ public class Main {
     }
 
     public static void playGame() {
+    
         HighScore highscore = new HighScore();
         Questions questions = new Questions();
         Scanner scanner = new Scanner(System.in);
