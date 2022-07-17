@@ -14,7 +14,7 @@ public class HighScore {
     }
     
     public void showHighscore() {
-        java.util.Collections.sort(highscores);
+        java.util.Collections.reverse(highscores);
         System.out.println("\n\n\t\tHighScores");
         int size = highscores.size();
         if(size ==0)
