@@ -32,7 +32,6 @@ public class Quiz {
             System.out.println(player_name + "\tscore:" + current_score);
 
         }
-        System.out.println("end of for loop play.startgame()");
         return current_score;
 
     }
