@@ -1,0 +1,17 @@
+# templete<T>
+    - while using template, it cannot use "new". so we use object. 
+
+# set doesn't allow dublicate value.
+# write 1l for long
+
+# set tries to return hashcode of the object and use it to compare.
+
+# firacode - extention in intellij shows != to math not equal sign
+
+# java doesn't support operator writing.
+
+# collection framework
+
+# if the method doesn't change class attribute, it can be changed to static method.
+
+# Bufferreader uses Buffer. Scanner doesn't 

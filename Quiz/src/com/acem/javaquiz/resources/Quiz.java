@@ -1,5 +1,6 @@
 package com.acem.javaquiz.resources;
 import java.util.Scanner;
+import java.time.LocalTime;
 
 public class Quiz {
     Scanner scanner = new Scanner(System.in);
@@ -22,22 +23,19 @@ public class Quiz {
             int j = Questions.getQuestion();
             System.out.print("Your Ans: ");
             String ans = scanner.nextLine();
+            LocalTime nowTime = LocalTime.now();
             if (ans.equals(Questions.getAnswer(j))) {
                 System.out.println("right answer");
-                currentScore = calculateScore(currentScore);
+                currentScore = calculateScore(currentScore, nowTime);
             } else {
                 System.out.println("wrong answer");
                 break;
             }
-
             System.out.println(player_name + ":\tscore:" + currentScore);
-
         }
         return currentScore;
-
     }
-
-    private int calculateScore(int currentScore)
+    private int calculateScore(int currentScore, LocalTime nowTime)
     {
         return ++currentScore;
     }

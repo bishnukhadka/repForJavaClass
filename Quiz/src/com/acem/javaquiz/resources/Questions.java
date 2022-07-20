@@ -97,7 +97,7 @@ public class Questions {
 
     public static String getAnswer(int i)
     {   
-        System.out.println("returned answer is: " + answers.get(i));
+        //System.out.println("returned answer is: " + answers.get(i));
         return answers.get(i);
     }
 

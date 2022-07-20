@@ -1,0 +1,108 @@
+# Map -> Internal of Map
+# Stream -> Filter, map, reduce, collector, method referencing, lambda
+
+Map<String, String> nameMap = new HashMap<>();
+
+HashMap
+    - not thread safe
+
+ConcurrentHashMap 
+    - thread safe
+
+.put()  
+    - add key-value pair
+
+.get("ram")
+    -gives null pointer if the key don't exist
+
+.getOrDefault("ram", "manny")
+    - returns manny if key doesn't exist 
+
+in DBMS, primary key produces hashCode and uses hashMap. It uses B tree which creates hascodes for pk.
+
+Map doesn't use loop whle getting the element. so map is faster. 
+
+super - reference variable which is used to refer immediate parent class object. 
+
+functional interface - has only one method.
+
+#default method in interface
+    - after using this keyword we can write complete method in the interface
+
+#lambda??
+
+- Interface cannot be instantiated using new keywork
+
+#anonymus class?
+
+java.util.functional
+    - list of all the functional interface.
+
+# To convert stream to list
+    List <string> l = stream.collect(Collects.toList());
+
+# To filter the stream and put it to stream
+    List<String> l  = stream.filter(name->name.startWith("a").collect(Collector.toList()))
+
+.distint() : gives one element if duplicate value
+
+#StringJoiner?
+
+List <Integer> marks = List.of(10,20,30,40);
+it is like doing List<Integer> marks = { 10, 20, 30, 40}
+
+#Null Pointer Design Pattern
+
+Data Processing 
+    - filter
+    - reduce 
+    - map 
+
+# Builder Design Pattern 
+    - Functional Programming or Method chaining
+
+#method referencing
+
+Concurrent Hash->thread safe
+
+
+default->allows concrete methods in interfaced class
+
+new can't be used for interfaced class, except for anonymous class
+
+stream keyword->placed in collection so all arrays can access
+to iterate
+has more features(method) than list
+methods:-
+    collect->convert to any collection
+        joining(delimiter)->uses StringJoiner internally
+        distinct()->returns only one instance of repeated
+        reduce()->convert large data sets to single value based on users wish
+            eg->list<integers> marks->marks.reduce(x,y)->x+y;
+            OR marks.reduce(Integer::sum)
+            ::->to access static methods in wrapper
+        map()->converts two compatible objects;huge chunk of data from 1 to other
+
+    filter->predicate->takes operand and returns boolean
+
+
+
+BiFunction->interfaced class that take two operands(any type), does sth and returns in same type
+
+java.util.function contains all functional interfaces
+
+parallel stream->for multiple threads to iterate
+
+forEach->uses stream internally
+
+List.of->converts to list an array instantiated
+Optional class->null pointer design pattern
+wrap a variable in it to handle null gracefully
+
+functional programming->chaining methods without using classes
+
+method referencing->allows use of any static method with same structure?
+
+Today:-
+    Map->Internal of map
+    streams->filter,map, reduce, collector, method refereincing

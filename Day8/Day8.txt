@@ -1,4 +1,4 @@
-syncronized types
+synchronized types
     -block level 
     -method syncronized
     -while using syncronized it locks the resource it is operating on. but for better performance thread,

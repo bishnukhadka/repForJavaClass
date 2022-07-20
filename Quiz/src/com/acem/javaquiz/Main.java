@@ -18,8 +18,7 @@ public class Main {
             char choice = scanner.next().charAt(0);
             if (choice == 'a' || choice == 'A') {
             playGame();
-                
-
+    
             } else if (choice == 'b' || choice == 'B') {
                 highscore.showHighscore();
             } else if (choice == 'c') {
@@ -36,7 +35,7 @@ public class Main {
     public static void playGame() {
     
         HighScore highscore = new HighScore();
-        Questions questions = new Questions();
+        //Questions questions = new Questions();
         Scanner scanner = new Scanner(System.in);
         
         while (true) {
@@ -55,9 +54,6 @@ public class Main {
                     System.out.println("ending game.");
                     System.exit(0);
                 }
-
-        }
-        
-        
+        }       
     }
 }

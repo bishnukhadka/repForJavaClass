@@ -1,0 +1,25 @@
+Archetype - folder structure
+
+<groupid> - like package id 
+
+ArtifactId - project name
+
+xml - data storing or object storing format
+    - standard to store data
+
+iml - project tracker file given by intellij for every project 
+
+POM - project oriented model 
+
+maven - dependencies management and build tool
+
+<properties>
+    <maven.compiler.source>18 </maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+</properties>
+- write code in java version 18 and it compiles(converts) it to version 8.
+
+jnit - used for unit testing java
+
+mvnrepository.com
+
