@@ -18,10 +18,11 @@ public class Main {
 
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("https://merojob.com/search/?q=");
-        String searchPhrase = "sales";
+        String searchPhrase ;
 
         Scanner scanner = new Scanner(System.in);
-        //searchPhrase = scanner.nextLine();
+        System.out.print("Enter job title your are looking for: ");
+        searchPhrase = scanner.nextLine();
         stringBuilder.append(searchPhrase);
 
         String url = stringBuilder.toString();
