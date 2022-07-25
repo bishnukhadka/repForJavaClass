@@ -5,13 +5,13 @@ import java.util.Date;
 public class Job {
     private String name;
     private Company company;
-    private Date deadline;
+    private String deadline;
 
-    public Date getDeadline() {
+    public String getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(Date deadline) {
+    public void setDeadline(String deadline) {
         this.deadline = deadline;
     }
 
@@ -34,7 +34,7 @@ public class Job {
 
     @Override
     public String toString() {
-        return "Job{" +
+        return "\nJob{" +
                 "name='" + name + '\'' +
                 ", company=" + company +
                 ", deadline=" + deadline +
