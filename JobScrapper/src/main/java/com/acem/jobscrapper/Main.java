@@ -37,7 +37,7 @@ public class Main {
         Integer noOfJobsInCurrentPage = scrapper.getNoOfJobsInCurrentPage(doc);
 
 
-        List<Job> jobList = scrapper.scrap(url,noOfPages,noOfJobsInCurrentPage);
+        List<Job> jobList = scrapper.scrap(url,noOfPages);
 
         Jsonmapper jsonmapper = new Jsonmapper();
 

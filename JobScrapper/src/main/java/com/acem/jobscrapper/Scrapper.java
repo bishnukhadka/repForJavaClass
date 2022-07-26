@@ -13,7 +13,7 @@ import java.util.List;
 
 //This is a Scrapper class for merojobs.com
 public class Scrapper {
-    private Document doc;
+    //private Document doc;
     private List<Job> jobList;
 
 //    public Scrapper(String url) {
@@ -52,7 +52,12 @@ public class Scrapper {
     public Integer getNoOfPages(Document doc) {
         //for no. of pages
         Elements elements = doc.select("div.ajax-paginator.text-center");
+        /* here, sometimes the jobs are few enough to be listed on the same page
+        so, when that happens, elements.text() is empty then the noOfPages is 1.
+         */
         String temp = elements.text();
+        if (temp=="")
+            return 1;
         String[] tempList = temp.split(" ");
         int index = tempList.length-3;
         return Integer.parseInt(tempList[index]);
@@ -136,6 +141,10 @@ public class Scrapper {
             Job job = new Job();
             Company company = new Company();
             String tempString;
+            /* here the size of the elements should always be compared with i because sometimes the job may
+            miss some fields like locations, company name i.e. elements.size may be smaller than the no. of
+            jobs in that page. so get(i) may give outOfBound() exception.
+             */
             if(companyNameElements.size() > i)
                 tempString = companyNameElements.get(i).text();
             else{
@@ -197,16 +206,17 @@ public class Scrapper {
         return doc;
     }
 
-    public List<Job> scrap(String url, Integer noOfPages, Integer noOfJobsInCurrentPage) {
-        List<Job> clone_list;
+    public List<Job> scrap(String url, Integer noOfPages) {
+        List<Job> cloneList;
         List<Job> jobList = null;
         for (int i = 0; i < noOfPages; i++) {
             Document doc = getDoc(url);
 
+            //had to clone the arraylist into a cloneList becasue you cannot perform .addAll(List) form a null list.
             if (i == 0) {
                 List<Job> page1 = scrapCurrentPage(doc);
-                clone_list = new ArrayList<Job>(page1);
-                jobList = clone_list;
+                cloneList = new ArrayList<Job>(page1);
+                jobList = cloneList;
             }
             if (i != 0)
                 jobList.addAll(scrapCurrentPage(doc));
