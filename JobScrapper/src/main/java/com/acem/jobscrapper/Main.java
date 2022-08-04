@@ -27,6 +27,7 @@ public class Main {
 
         String url = stringBuilder.toString();
         System.out.println(url);
+        scanner.close();
 
         Scrapper scrapper = new Scrapper();
         Document doc = scrapper.getDoc(url);
